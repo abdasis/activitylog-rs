@@ -1,0 +1,30 @@
+[package]
+name = "activitylog"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Reimplementation of spatie/laravel-activitylog v4 for Rust"
+license = "MIT"
+repository = "https://github.com/abdasis/activitylog-rs"
+readme = "README.md"
+keywords = ["activity-log", "audit", "sqlx", "logging", "spatie"]
+categories = ["database", "development-tools::debugging"]
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+uuid = { version = "1", default-features = false, features = ["v4"] }
+sqlx = { version = "0.8", optional = true, default-features = false, features = ["runtime-tokio"] }
+
+[features]
+default = ["sqlite", "memory"]
+sqlite = ["dep:sqlx", "sqlx/sqlite"]
+postgres = ["dep:sqlx", "sqlx/postgres"]
+mysql = ["dep:sqlx", "sqlx/mysql"]
+memory = []
+
+[dev-dependencies]
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "sqlite"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }

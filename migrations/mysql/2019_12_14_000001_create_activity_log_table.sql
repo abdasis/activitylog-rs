@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS activity_log (
+    id VARCHAR(36) PRIMARY KEY NOT NULL,
+    log_name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    subject_type VARCHAR(255),
+    subject_id VARCHAR(36),
+    causer_type VARCHAR(255),
+    causer_id VARCHAR(36),
+    properties TEXT NOT NULL,
+    attribute_changes TEXT,
+    event VARCHAR(64),
+    batch_uuid VARCHAR(36),
+    created_at VARCHAR(32) NOT NULL,
+    updated_at VARCHAR(32),
+    KEY activity_log_subject_index (subject_type, subject_id),
+    KEY activity_log_causer_index (causer_type, causer_id),
+    KEY activity_log_log_name_index (log_name),
+    KEY activity_log_created_at_index (created_at),
+    KEY activity_log_batch_uuid_index (batch_uuid)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
