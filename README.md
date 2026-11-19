@@ -1,4 +1,4 @@
-# activitylog
+# activitylog-rs
 
 Reimplementasi [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) v4 untuk Rust.
 Library crate, async, tanpa proc-macro dan tanpa `unsafe`.
@@ -19,8 +19,11 @@ Library crate, async, tanpa proc-macro dan tanpa `unsafe`.
 
 ```toml
 [dependencies]
-activitylog = { path = "../activitylog" }
+activitylog-rs = { path = "../activitylog" }
 ```
+
+Nama paket `activitylog-rs`, nama library tetap `activitylog` sehingga
+`use activitylog::...` dipakai di kode.
 
 Fitur: `sqlite` (default), `postgres`, `mysql`, `memory` (default). Driver pertama yang aktif menang
 dengan urutan sqlite, postgres, mysql.

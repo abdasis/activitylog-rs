@@ -1,5 +1,5 @@
 [package]
-name = "activitylog"
+name = "activitylog-rs"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
@@ -9,6 +9,9 @@ repository = "https://github.com/abdasis/activitylog-rs"
 readme = "README.md"
 keywords = ["activity-log", "audit", "sqlx", "logging", "spatie"]
 categories = ["database", "development-tools::debugging"]
+
+[lib]
+name = "activitylog"
 
 [dependencies]
 chrono = { version = "0.4", features = ["serde"] }
