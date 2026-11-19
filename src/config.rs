@@ -10,7 +10,7 @@ pub const DEFAULT_LOG_NAME: &str = "default";
 /// Umur record default sebelum dibersihkan, dalam hari.
 pub const DELETE_RECORDS_OLDER_THAN_DAYS: i64 = 365;
 
-/// Konfigurasi sederhana, setara `config/activitylog.php` milik spatie.
+/// Konfigurasi activity log.
 #[derive(Debug, Clone)]
 pub struct ActivityConfig {
     /// Nama log default.

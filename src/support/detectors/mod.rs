@@ -1,4 +1,4 @@
-//! Detektor kecil yang meniru `Support/Detectors` milik spatie.
+//! Detektor kecil untuk subjek, causer, event, batch, dan perubahan atribut.
 
 pub mod attribute_changes;
 pub mod batch;

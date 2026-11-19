@@ -1,6 +1,7 @@
 # activitylog-rs
 
-Reimplementasi [spatie/laravel-activitylog](https://github.com/spatie/laravel-activitylog) v4 untuk Rust.
+Library activity log async untuk Rust: subjek, causer, properti JSON, perubahan atribut,
+event, dan batch UUID. Penyimpanan lewat `SQLx` (SQLite/PostgreSQL/MySQL) atau memori.
 Library crate, async, tanpa proc-macro dan tanpa `unsafe`.
 
 ## Fitur
@@ -118,24 +119,7 @@ yang dicatat.
 Batch UUID dapat dibagi dalam satu request dengan `support::detectors::Batch`, lalu diteruskan lewat
 `.with_batch_uuid(batch.uuid())`. Hook sebelum penyimpanan memakai `.tap(|pending| { ... })`.
 
-## Pemetaan dari spatie
-
-| spatie | crate ini |
-| --- | --- |
-| `src/Activity.php` | `src/activity.rs` (`Activity`) |
-| `src/ActivityLogger.php` | `src/logger.rs` (`activity()`, `PendingActivity`) |
-| `src/LogOptions.php` | `src/log_options.rs` |
-| `src/Contracts/Activity.php` | `src/contracts.rs` (`ActivityContract`, `Subject`, `Causer`) |
-| `src/Exceptions/*` | `src/error.rs` (`Error`) |
-| `src/Models/Activity.php` | `src/models/mod.rs` (`ActivityQuery`) |
-| `src/Traits/LogsActivity.php` | `src/traits/logs_activity.rs` |
-| `src/Traits/CausesActivity.php` | `src/traits/causes_activity.rs` |
-| `src/Support/AttributeChangeDetector` | `src/support/attribute_change.rs` |
-| `src/Support/Detectors/*` | `src/support/detectors/*` |
-| `config/activitylog.php` | `src/config.rs` (`ActivityConfig`) |
-| `database/migrations/*` | `src/migrations.rs` + `migrations/<driver>/*.sql` |
-
-Perbedaan yang disengaja:
+## Catatan desain
 
 - `id` berupa UUID v4 (teks), bukan auto-increment, agar portabel antar driver.
 - API async; trait storage memakai async fn in trait bawaan Rust.

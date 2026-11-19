@@ -1,4 +1,4 @@
-//! Opsi pencatatan otomatis, setara `LogOptions` milik spatie.
+//! Opsi pencatatan otomatis saat model berubah.
 
 use std::collections::{BTreeMap, BTreeSet};
 

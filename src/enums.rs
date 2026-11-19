@@ -6,9 +6,8 @@ use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
 /// Jenis event yang dicatat pada sebuah activity.
 ///
-/// Nilai disimpan sebagai teks sehingga cocok dengan kolom `event` milik
-/// spatie/laravel-activitylog. Nilai yang tidak dikenal disimpan sebagai
-/// [`ActivityEvent::Custom`].
+/// Nilai disimpan sebagai teks pada kolom `event`. Nilai yang tidak dikenal
+/// disimpan sebagai [`ActivityEvent::Custom`].
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub enum ActivityEvent {
     /// Record baru dibuat.

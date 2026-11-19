@@ -7,7 +7,7 @@ use serde_json::Value;
 
 /// Nilai lama dan baru per atribut.
 ///
-/// Bentuk JSON mengikuti spatie: `{"old": {...}, "attributes": {...}}`.
+/// Bentuk JSON: `{"old": {...}, "attributes": {...}}`.
 #[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
 pub struct AttributeChanges {
     /// Nilai sebelum perubahan.

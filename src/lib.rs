@@ -1,4 +1,4 @@
-//! Reimplementasi `spatie/laravel-activitylog` v4 untuk Rust.
+//! Activity log async untuk Rust.
 //!
 //! Crate ini menyimpan activity (subjek, causer, properti, perubahan atribut,
 //! event, batch UUID) lewat trait [`ActivityStorage`]. Implementasi tersedia

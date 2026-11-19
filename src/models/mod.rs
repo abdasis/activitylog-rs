@@ -8,7 +8,7 @@ use crate::enums::ActivityEvent;
 use crate::error::{Error, Result};
 use crate::storage::{ActivityFilter, ActivityStorage};
 
-/// Builder filter yang meniru scope pada model `Activity` milik spatie.
+/// Builder filter untuk query activity.
 #[derive(Debug, Clone, Default)]
 pub struct ActivityQuery {
     filter: ActivityFilter,

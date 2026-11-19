@@ -83,7 +83,7 @@ impl PendingActivity {
         self
     }
 
-    /// Hook sebelum penyimpanan, setara `tap` milik spatie.
+    /// Hook sebelum penyimpanan.
     pub fn tap(mut self, hook: impl FnOnce(&mut Self)) -> Self {
         hook(&mut self);
         self

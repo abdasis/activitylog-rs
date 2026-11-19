@@ -3,11 +3,11 @@ name = "activitylog-rs"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
-description = "Reimplementation of spatie/laravel-activitylog v4 for Rust"
+description = "Async activity log for Rust with SQLx storage, causer/subject tracking, and attribute change history"
 license = "MIT"
 repository = "https://github.com/abdasis/activitylog-rs"
 readme = "README.md"
-keywords = ["activity-log", "audit", "sqlx", "logging", "spatie"]
+keywords = ["activity-log", "audit", "sqlx", "logging", "audit-trail"]
 categories = ["database", "development-tools::debugging"]
 
 [lib]
